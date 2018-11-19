@@ -1,0 +1,18 @@
+<h1>Nouvelle Partie</h1>
+<!-- <p>Find me in app/views/games/new.html.erb</p> -->
+
+<ul>
+  <% @letters.each do |letter| %>
+  <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <h3>What is the longest word you can write with this letters?</h3>
+<input type="text" name="word">
+<input type="submit" value="Jouer!">
+</form>
+
+<br/>
+<%= link_to "Rejouer!", new_path %>
